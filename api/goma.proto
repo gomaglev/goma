@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package pkg.proto.{{.Package}}.{{.Version}};
+option go_package = "service/v1/{{.GoPackage}};{{.GoPackageName}}";
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+import "pkg/proto/{{.GoPackage}}/types.proto";
+import "pkg/proto/common/common.proto";
+
+service {{.Name}}Service {
+  // Get {{.Name}}
+  rpc Get(Get{{.Name}}Request) returns (Get{{.Name}}Response) {
+    option (google.api.http) = {
+      get: "{{.URI}}/{id}"
+      response_body : "{{.LowerCaseName}}"
+    };
+  }
+
+  // List {{.NamePlural}}
+  rpc List(List{{.NamePlural}}Request) returns (List{{.NamePlural}}Response) {
+    option (google.api.http) = {
+      get: "{{.URI}}"
+      response_body : "{{.LowerCaseNamePlural}}"
+    };
+  }
+
+  // Create {{.Name}}
+  rpc Create(Creat{{.Name}}Request) returns (Creat{{.Name}}Response) {
+    option (google.api.http) = {
+      post: "{{.URI}}"
+      body: "*"
+    };
+  };
+
+  // Update {{.Name}}
+  rpc Update(Update{{.Name}}Request) returns (Update{{.Name}}Response) {
+		option (google.api.http) = {
+			put: "{{.URI}}/{id}"
+			body: "*"
+		};
+  }
+  
+  // Delete {{.Name}}
+	rpc Delete(Delete{{.Name}}Request) returns (Delete{{.Name}}Response) {
+		option (google.api.http) = {
+			delete: "{{.URI}}/{id}"
+    };
+  }
+}
+
+message Get{{.Name}}Request {
+    string id = 1;
+    {{.ParentIDs}}
+}
+
+message Get{{.Name}}Response {
+    {{.MessageName}} {{.LowerCaseName}} = 1;
+}
+
+message List{{.NamePlural}}Request {
+    common.PaginationParam pagination=1 [(validate.rules).message.required = true];
+    repeated string ids = 2;
+    {{.ParentIDs}}
+}
+
+message List{{.NamePlural}}Response {
+    {{.MessageNamePlural}} {{.LowerCaseNamePlural}} = 1;
+}
+
+message Creat{{.Name}}Request {
+    {{.MessageName}} {{.LowerCaseName}} = 1;
+    {{.ParentIDs}}
+}
+
+message Creat{{.Name}}Response {
+  string id = 1;  
+}
+message Update{{.Name}}Request {
+    string id = 1;
+    {{.MessageName}} {{.LowerCaseName}} = 2;
+    {{.ParentIDs}}
+}
+
+message Update{{.Name}}Response {
+  int64 updated = 1;
+}
+
+
+message Delete{{.Name}}Request {
+    string id = 1;
+    repeated string ids = 2;
+    {{.ParentIDs}}
+}
+
+message Delete{{.Name}}Response {
+  int64 deleted = 1;
+}

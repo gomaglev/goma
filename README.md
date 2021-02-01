@@ -1,6 +1,6 @@
 # Goma
 
-Chibi Goma Project Template.
+Chibi Goma Project Template for [protomicro](https://github.com/gomaglev/protomicro).
 
 ## Variables
 

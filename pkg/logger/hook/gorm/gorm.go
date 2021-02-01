@@ -3,7 +3,7 @@ package gorm
 import (
 	"time"
 
-	"GOMA/pkg/logger"
+	"app_module__/pkg/logger"
 
 	"github.com/jinzhu/gorm"
 	jsoniter "github.com/json-iterator/go"

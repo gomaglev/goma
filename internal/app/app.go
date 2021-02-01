@@ -8,10 +8,10 @@ import (
 	"syscall"
 	"time"
 
-	"GOMA/internal/app/injector"
-	"GOMA/internal/pkg/config"
-	iutil "GOMA/internal/pkg/util"
-	"GOMA/pkg/logger"
+	"app_module__/internal/app/injector"
+	"app_module__/internal/pkg/config"
+	iutil "app_module__/internal/pkg/util"
+	"app_module__/pkg/logger"
 
 	"github.com/google/gops/agent"
 )

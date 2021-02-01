@@ -6,8 +6,8 @@
 package mock
 
 import (
-	"GOMA/internal/app/model/gorm"
-	"GOMA/internal/app/model/gorm/model"
+	"app_module__/internal/app/model/gorm"
+	"app_module__/internal/app/model/gorm/model"
 )
 
 // Injectors from wire.go:
@@ -17,11 +17,11 @@ func BuildModelInjector() (*ModelInjector, func(), error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	order := &model.Order{
+	messageTypeName__ := &model.MessageTypeName__{
 		DB: db,
 	}
 	modelInjector := &ModelInjector{
-		OrderModel: order,
+		MessageTypeName__Model: messageTypeName__,
 	}
 	return modelInjector, func() {
 		cleanup()

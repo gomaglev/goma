@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"GOMA/pkg/icontext"
+	"app_module__/pkg/icontext"
 
 	"gorm.io/gorm"
 )

@@ -4,10 +4,10 @@
 package injector
 
 import (
-	gorm "GOMA/internal/app/model/gorm"
-	gormModel "GOMA/internal/app/model/gorm/model"
-	"GOMA/internal/app/service"
-	"GOMA/internal/pkg/server"
+	gorm "app_module__/internal/app/model/gorm"
+	gormModel "app_module__/internal/app/model/gorm/model"
+	"app_module__/internal/app/service"
+	"app_module__/internal/pkg/server"
 
 	"github.com/google/wire"
 )

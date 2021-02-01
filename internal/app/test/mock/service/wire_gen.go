@@ -6,10 +6,9 @@
 package mock
 
 import (
-	"GOMA/internal/app/model/gorm"
-	"GOMA/internal/app/model/gorm/model"
-	"GOMA/internal/app/service/v1/order"
-	order2 "GOMA/internal/app/service/v2/order"
+	"app_module__/internal/app/model/gorm"
+	"app_module__/internal/app/model/gorm/model"
+	"app_module__/internal/app/service/v1/gopackage_name__"
 )
 
 // Injectors from wire.go:
@@ -19,18 +18,14 @@ func BuildMockInjector() (*MockInjector, func(), error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	modelOrder := &model.Order{
+	messageTypeName__ := &model.MessageTypeName__{
 		DB: db,
 	}
-	orderService := &order.OrderService{
-		OrderModel: modelOrder,
-	}
-	orderOrderService := &order2.OrderService{
-		OrderModel: modelOrder,
+	pbName__Service := &gopackage_name__.PbName__Service{
+		PbName__Model: messageTypeName__,
 	}
 	mockInjector := &MockInjector{
-		OrderServiceV1: orderService,
-		OrderServiceV2: orderOrderService,
+		OrderServiceV1: pbName__Service,
 	}
 	return mockInjector, func() {
 		cleanup()

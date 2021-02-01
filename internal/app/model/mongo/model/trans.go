@@ -3,8 +3,8 @@ package model
 import (
 	"context"
 
-	"GOMA/internal/app/model"
-	"GOMA/pkg/icontext"
+	"app_module__/internal/app/model"
+	"app_module__/pkg/icontext"
 
 	"github.com/google/wire"
 	"go.mongodb.org/mongo-driver/mongo"

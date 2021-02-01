@@ -51,7 +51,7 @@ Format = "text"
 # log output(support：stdout/stderr/file)
 Output = "stdout"
 # log output file path
-OutputFile = "data/{{.LowerCaseAppName}}.log"
+OutputFile = "data/app_name__.log"
 # enable log hook
 EnableHook = false
 # log hook level
@@ -144,7 +144,7 @@ User = "root"
 # Password
 Password = "123456"
 # Database name
-DBName = "{{.LowerCaseAppName}}"
+DBName = "app_name__"
 # other parameters
 Parameters = "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
 
@@ -158,7 +158,7 @@ User = "postgres"
 # Password
 Password = "password"
 # Database name
-DBName = "{{.LowerCaseAppName}}"
+DBName = "app_name__"
 # SSL mode
 SSLMode = "disable"
 # other parameters
@@ -166,7 +166,7 @@ Parameters = ""
 
 [Sqlite3]
 # Database file path
-Path = "data/{{.LowerCaseAppName}}.db"
+Path = "data/app_name__.db"
 
 # mongo version >=4.0
 # replication set mode start
@@ -177,9 +177,9 @@ Path = "data/{{.LowerCaseAppName}}.db"
 # StorageEngine choose wiredTiger
 [Mongo]
 # URI(mongodb://user:password@192.168.1.118:27017/?authSource=admin)
-URI = "mongodb://192.168.1.118:27017/?appName={{.LowerCaseAppName}}"
+URI = "mongodb://192.168.1.118:27017/?appName=app_name__"
 # Database name
-Database = "{{.LowerCaseAppName}}"
+Database = "app_name__"
 # Connection timeout (s)
 Timeout = 30
 # collection prefix

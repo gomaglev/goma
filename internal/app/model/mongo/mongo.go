@@ -3,8 +3,8 @@ package mongo
 import (
 	"context"
 
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/logger"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/logger"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

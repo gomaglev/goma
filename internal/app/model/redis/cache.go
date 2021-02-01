@@ -3,8 +3,8 @@ package redis
 import (
 	"context"
 
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/logger"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/logger"
 
 	"github.com/go-redis/redis/v8"
 )

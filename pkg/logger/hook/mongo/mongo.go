@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"GOMA/pkg/logger"
+	"app_module__/pkg/logger"
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/sirupsen/logrus"

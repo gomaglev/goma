@@ -4,12 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	orderv1 "GOMA/internal/app/service/v1/order"
-	itemv1 "GOMA/internal/app/service/v1/order/item"
-	orderv2 "GOMA/internal/app/service/v2/order"
-	"GOMA/internal/pkg/config"
+	gopackage_name__v1 "app_module__/internal/app/service/v1/gopackage_name__"
+	"app_module__/internal/pkg/config"
 
-	"GOMA/internal/pkg/server/rpc"
+	"app_module__/internal/pkg/server/rpc"
 
 	"github.com/google/wire"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
@@ -22,36 +20,21 @@ var _ rpc.IRegister = (*Register)(nil)
 var RegisterSet = wire.NewSet(wire.Struct(new(Register), "*"), wire.Bind(new(rpc.IRegister), new(*Register)))
 
 type Register struct {
-	ItemServiceV1  *itemv1.ItemService
-	OrderServiceV1 *orderv1.OrderService
-	OrderServiceV2 *orderv2.OrderService
+	PbName__ServiceV1 *gopackage_name__v1.PbName__Service
 }
 
 // RegisterServiceServers implementation
 func (r *Register) RegisterServiceServers(server *grpc.Server) {
-	// Item Service
-	itemv1.RegisterItemServiceServer(server, r.ItemServiceV1)
-	// Order Service
-	orderv1.RegisterOrderServiceServer(server, r.OrderServiceV1)
-	// Order Service
-	orderv2.RegisterOrderServiceServer(server, r.OrderServiceV2)
+	// gopackage_name__ Service
+	gopackage_name__v1.RegisterPbName__ServiceServer(server, r.PbName__ServiceV1)
 }
 
 // RegisterServiceHandlerFromEndpoints implementation
 func (r *Register) RegisterServiceHandlerFromEndpoints(ctx context.Context, multiplexer *runtime.ServeMux) error {
 	endpoint := r.endpoint()
 	dialOption := r.DialOption()
-	// Item Service
-	if err := itemv1.RegisterItemServiceHandlerFromEndpoint(
-		ctx, multiplexer, endpoint, dialOption); err != nil {
-		return err
-	}
-	// Order Service
-	if err := orderv1.RegisterOrderServiceHandlerFromEndpoint(
-		ctx, multiplexer, endpoint, dialOption); err != nil {
-		return err
-	}
-	if err := orderv2.RegisterOrderServiceHandlerFromEndpoint(
+	// gopackage_name__ Service
+	if err := gopackage_name__v1.RegisterPbName__ServiceHandlerFromEndpoint(
 		ctx, multiplexer, endpoint, dialOption); err != nil {
 		return err
 	}

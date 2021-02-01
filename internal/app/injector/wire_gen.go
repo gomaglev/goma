@@ -6,13 +6,11 @@
 package injector
 
 import (
-	"GOMA/internal/app/model/gorm"
-	"GOMA/internal/app/model/gorm/model"
-	"GOMA/internal/app/service"
-	"GOMA/internal/app/service/v1/order"
-	"GOMA/internal/app/service/v1/order/item"
-	order2 "GOMA/internal/app/service/v2/order"
-	"GOMA/internal/pkg/server/rpc"
+	"app_module__/internal/app/model/gorm"
+	"app_module__/internal/app/model/gorm/model"
+	"app_module__/internal/app/service"
+	"app_module__/internal/app/service/v1/gopackage_name__"
+	"app_module__/internal/pkg/server/rpc"
 )
 
 // Injectors from wire.go:
@@ -22,35 +20,20 @@ func BuildInjector() (*Injector, func(), error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	orderItem := &model.OrderItem{
+	messageTypeName__ := &model.MessageTypeName__{
 		DB: db,
 	}
-	itemService := &item.ItemService{
-		ItemModel: orderItem,
-	}
-	modelOrder := &model.Order{
-		DB: db,
-	}
-	orderService := &order.OrderService{
-		OrderModel: modelOrder,
-	}
-	orderOrderService := &order2.OrderService{
-		OrderModel: modelOrder,
+	pbName__Service := &gopackage_name__.PbName__Service{
+		PbName__Model: messageTypeName__,
 	}
 	register := &service.Register{
-		ItemServiceV1:  itemService,
-		OrderServiceV1: orderService,
-		OrderServiceV2: orderOrderService,
+		PbName__ServiceV1: pbName__Service,
 	}
 	server := &rpc.Server{
 		Register: register,
 	}
-	gateway := &rpc.Gateway{
-		Register: register,
-	}
 	injector := &Injector{
-		Server:  server,
-		Gateway: gateway,
+		Server: server,
 	}
 	return injector, func() {
 		cleanup()

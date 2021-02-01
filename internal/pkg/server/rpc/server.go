@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/grpclimit"
-	"GOMA/pkg/logger"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/grpclimit"
+	"app_module__/pkg/logger"
 	"github.com/gorilla/mux"
 	"github.com/pkg/errors"
 	"github.com/tmc/grpc-websocket-proxy/wsproxy"

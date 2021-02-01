@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pkg.proto.common;
 
-option go_package = "GOMA/pkg/proto/common;common";
+option go_package = "app_module__/pkg/proto/common;common";
 
 import "validate/validate.proto";
 
@@ -17,14 +17,21 @@ message PaginationParam {
     bool  count_only = 2;
     int32 page = 3 [(validate.rules).int32.gte = 1];
     int32 page_size = 4 [(validate.rules).int32.lte = 10000];
-    string cursor = 5;
+
+    // reserved for seek sort
+    string after_id = 5;
+    // usage: define a map[sort_id][]*common.OrderByField
+    // client side only pass a sort_id, it will get a predefined orderby list
+    string sort_id = 6;
 }
 
 message PaginationResult {
     int64 total = 1 [(validate.rules).int64.gte = 0];
     int32 page = 2 [(validate.rules).int32.gte = 1];
     int32 page_size = 3 [(validate.rules).int32.lte = 10000];
-    string cursor = 4;
+
+    // reserved for seek sort
+    string after_id = 4;
 }
 
 message StatusResult {

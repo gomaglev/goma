@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"GOMA/internal/app/model/gorm/entity"
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/logger"
+	"app_module__/internal/app/model/gorm/entity"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/logger"
 
 	// Import the driver
 	"gorm.io/driver/mysql"
@@ -104,8 +104,6 @@ func AutoMigrate(db *gorm.DB) error {
 		db = db.Set("gorm:table_options", "ENGINE=InnoDB")
 	}
 	return db.AutoMigrate(
-		new(entity.Order),
-		new(entity.OrderItem),
-		new(entity.OrderItemMessage),
+		new(entity.MessageTypeName__),
 	)
 }

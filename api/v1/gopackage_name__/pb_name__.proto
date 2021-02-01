@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package pkg.proto.gopackage_name__.version__;
+option go_package = "service/v1/gopackage_name__;gopackage_name__";
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+import "pkg/proto/gopackage_name__/types.proto";
+import "pkg/proto/common/common.proto";
+
+service PbName__Service {
+  // Get pb_name__
+  rpc Get(GetPbName__Request) returns (GetPbName__Response) {
+    option (google.api.http) = {
+      get: "/gateway_uri__/{id}"
+      response_body : "pb_name__"
+    };
+  }
+
+  // List pb_name_plural__
+  rpc List(ListPbNamePlural__Request) returns (ListPbNamePlural__Response) {
+    option (google.api.http) = {
+      get: "/gateway_uri__"
+      response_body : "pb_name_plural__"
+    };
+  }
+
+  // Create pb_name__
+  rpc Create(CreatPbName__Request) returns (CreatPbName__Response) {
+    option (google.api.http) = {
+      post: "/gateway_uri__"
+      body: "*"
+    };
+  };
+
+  // Update pb_name__
+  rpc Update(UpdatePbName__Request) returns (UpdatePbName__Response) {
+		option (google.api.http) = {
+			put: "/gateway_uri__/{id}"
+			body: "*"
+		};
+  }
+  
+  // Delete pb_name__
+	rpc Delete(DeletePbName__Request) returns (DeletePbName__Response) {
+		option (google.api.http) = {
+			delete: "/gateway_uri__/{id}"
+    };
+  }
+}
+
+message GetPbName__Request {
+    string id = 1;
+    //ApiProtoParentIDs__
+}
+
+message GetPbName__Response {
+    MessageTypeName__ pb_name__ = 1;
+}
+
+message ListPbNamePlural__Request {
+    common.PaginationParam pagination=1 [(validate.rules).message.required = true];
+    repeated string ids = 2;
+    //ApiProtoParentIDs__
+}
+
+message ListPbNamePlural__Response {
+    MessageTypeNamePlural__ pb_name_plural__ = 1;
+}
+
+message CreatPbName__Request {
+    MessageTypeName__ pb_name__ = 1;
+    //ApiProtoParentIDs__
+}
+
+message CreatPbName__Response {
+  string id = 1;  
+}
+message UpdatePbName__Request {
+    string id = 1;
+    MessageTypeName__ pb_name__ = 2;
+    //ApiProtoParentIDs__
+}
+
+message UpdatePbName__Response {
+  int64 updated = 1;
+}
+
+
+message DeletePbName__Request {
+    string id = 1;
+    repeated string ids = 2;
+    //ApiProtoParentIDs__
+}
+
+message DeletePbName__Response {
+  int64 deleted = 1;
+}

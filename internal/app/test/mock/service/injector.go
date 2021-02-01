@@ -1,8 +1,8 @@
 package mock
 
 import (
-	orderv1 "GOMA/internal/app/service/v1/order"
-	orderv2 "GOMA/internal/app/service/v2/order"
+	gopackage_name__v1 "app_module__/internal/app/service/v1/gopackage_name__"
+
 	"github.com/google/wire"
 )
 
@@ -10,6 +10,5 @@ import (
 var MockInjectorSet = wire.NewSet(wire.Struct(new(MockInjector), "*"))
 
 type MockInjector struct {
-	OrderServiceV1 *orderv1.OrderService
-	OrderServiceV2 *orderv2.OrderService
+	OrderServiceV1 *gopackage_name__v1.PbName__Service
 }

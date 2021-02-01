@@ -1,0 +1,403 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api/v1/gopackage_name__/pb_name__.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/gateway_uri__": {
+      "get": {
+        "summary": "List pb_name_plural__",
+        "operationId": "PbName__Service_List",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/gopackage_name__MessageTypeNamePlural__"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pagination.pagination",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.countOnly",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pagination.afterId",
+            "description": "reserved for seek sort.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pagination.sortId",
+            "description": "usage: define a map[sort_id][]*common.OrderByField\nclient side only pass a sort_id, it will get a predefined orderby list.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "PbName__Service"
+        ]
+      },
+      "post": {
+        "summary": "Create pb_name__",
+        "operationId": "PbName__Service_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/version__CreatPbName__Response"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/version__CreatPbName__Request"
+            }
+          }
+        ],
+        "tags": [
+          "PbName__Service"
+        ]
+      }
+    },
+    "/gateway_uri__/{id}": {
+      "get": {
+        "summary": "Get pb_name__",
+        "operationId": "PbName__Service_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/gopackage_name__MessageTypeName__"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "PbName__Service"
+        ]
+      },
+      "delete": {
+        "summary": "Delete pb_name__",
+        "operationId": "PbName__Service_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/version__DeletePbName__Response"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "PbName__Service"
+        ]
+      },
+      "put": {
+        "summary": "Update pb_name__",
+        "operationId": "PbName__Service_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/version__UpdatePbName__Response"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/version__UpdatePbName__Request"
+            }
+          }
+        ],
+        "tags": [
+          "PbName__Service"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "commonPaginationParam": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "boolean"
+        },
+        "countOnly": {
+          "type": "boolean"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "afterId": {
+          "type": "string",
+          "title": "reserved for seek sort"
+        },
+        "sortId": {
+          "type": "string",
+          "title": "usage: define a map[sort_id][]*common.OrderByField\nclient side only pass a sort_id, it will get a predefined orderby list"
+        }
+      }
+    },
+    "commonPaginationResult": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "string",
+          "format": "int64"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "afterId": {
+          "type": "string",
+          "title": "reserved for seek sort"
+        }
+      }
+    },
+    "gopackage_name__MessageTypeNamePlural__": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gopackage_name__MessageTypeName__"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/commonPaginationResult"
+        }
+      }
+    },
+    "gopackage_name__MessageTypeName__": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "@inject_tag: faker:\"uuid_hyphenated\""
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "@inject_tag: faker:\"timestamp\""
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "@inject_tag: faker:\"timestamp\""
+        }
+      },
+      "title": "MessageTypeName__"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "version__CreatPbName__Request": {
+      "type": "object",
+      "properties": {
+        "pbName": {
+          "$ref": "#/definitions/gopackage_name__MessageTypeName__"
+        }
+      }
+    },
+    "version__CreatPbName__Response": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "version__DeletePbName__Response": {
+      "type": "object",
+      "properties": {
+        "deleted": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "version__GetPbName__Response": {
+      "type": "object",
+      "properties": {
+        "pbName": {
+          "$ref": "#/definitions/gopackage_name__MessageTypeName__"
+        }
+      }
+    },
+    "version__ListPbNamePlural__Response": {
+      "type": "object",
+      "properties": {
+        "pbNamePlural": {
+          "$ref": "#/definitions/gopackage_name__MessageTypeNamePlural__"
+        }
+      }
+    },
+    "version__UpdatePbName__Request": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pbName": {
+          "$ref": "#/definitions/gopackage_name__MessageTypeName__"
+        }
+      }
+    },
+    "version__UpdatePbName__Response": {
+      "type": "object",
+      "properties": {
+        "updated": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

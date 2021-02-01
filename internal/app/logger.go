@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/logger"
-	loggerhook "GOMA/pkg/logger/hook"
-	loggergormhook "GOMA/pkg/logger/hook/gorm"
-	loggermongohook "GOMA/pkg/logger/hook/mongo"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/logger"
+	loggerhook "app_module__/pkg/logger/hook"
+	loggergormhook "app_module__/pkg/logger/hook/gorm"
+	loggermongohook "app_module__/pkg/logger/hook/mongo"
 
 	"github.com/sirupsen/logrus"
 )

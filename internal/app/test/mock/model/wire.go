@@ -4,8 +4,8 @@
 package mock
 
 import (
-	"GOMA/internal/app/model/gorm"
-	"GOMA/internal/app/model/gorm/model"
+	"app_module__/internal/app/model/gorm"
+	"app_module__/internal/app/model/gorm/model"
 	"github.com/google/wire"
 )
 

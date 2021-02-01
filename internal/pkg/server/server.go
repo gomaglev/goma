@@ -1,7 +1,7 @@
 package server
 
 import (
-	"GOMA/internal/pkg/server/rpc"
+	"app_module__/internal/pkg/server/rpc"
 
 	"github.com/google/wire"
 )

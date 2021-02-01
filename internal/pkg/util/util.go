@@ -3,10 +3,10 @@ package iutil
 import (
 	"context"
 
-	"GOMA/internal/pkg/config"
-	"GOMA/pkg/logger"
-	"GOMA/pkg/trace"
-	"GOMA/pkg/unique"
+	"app_module__/internal/pkg/config"
+	"app_module__/pkg/logger"
+	"app_module__/pkg/trace"
+	"app_module__/pkg/unique"
 
 	"github.com/teris-io/shortid"
 )

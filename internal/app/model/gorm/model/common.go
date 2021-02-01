@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"GOMA/pkg/icontext"
+	"app_module__/pkg/icontext"
 
-	"GOMA/pkg/proto/common"
+	"app_module__/pkg/proto/common"
 
 	"gorm.io/gorm"
 )
@@ -65,7 +65,6 @@ func WrapPageQuery(ctx context.Context,
 		Total:    total,
 		Page:     int32(pp.Page),
 		PageSize: int32(pp.PageSize),
-		Cursor:   pp.Cursor,
 	}, nil
 }
 

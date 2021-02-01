@@ -62,7 +62,9 @@ func (m *PaginationParam) Validate() error {
 		}
 	}
 
-	// no validation rules for Cursor
+	// no validation rules for AfterId
+
+	// no validation rules for SortId
 
 	return nil
 }
@@ -150,7 +152,7 @@ func (m *PaginationResult) Validate() error {
 		}
 	}
 
-	// no validation rules for Cursor
+	// no validation rules for AfterId
 
 	return nil
 }

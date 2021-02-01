@@ -1,9 +1,7 @@
 package service
 
 import (
-	orderv1 "GOMA/internal/app/service/v1/order"
-	itemv1 "GOMA/internal/app/service/v1/order/item"
-	orderv2 "GOMA/internal/app/service/v2/order"
+	gopackage_name__v1 "app_module__/internal/app/service/v1/gopackage_name__"
 
 	"github.com/google/wire"
 )
@@ -11,7 +9,5 @@ import (
 // ServiceSet api injection
 var ServiceSet = wire.NewSet(
 	RegisterSet,
-	orderv1.OrderSet,
-	itemv1.ItemSet,
-	orderv2.OrderSet,
+	gopackage_name__v1.PbName__Set,
 )

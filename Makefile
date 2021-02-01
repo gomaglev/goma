@@ -28,7 +28,7 @@ help: ## Show this help
 
 .DEFAULT_GOAL := up
 
-APP = microshop
+APP = app_name__
 SERVER_BIN = ./cmd/${APP}/${APP}
 
 # Docker run
@@ -39,7 +39,7 @@ build-nc: ## Bulid the container without cache
 	docker build --no-cache -t $(DOCKER_IMAGE) .
 
 start: 
-	go run ./cmd/microshop/main.go start
+	go run ./cmd/${APP}/main.go start
 
 wire: ## Run the container
 	wire ./internal/app/injector ./internal/app/test/mock/model ./internal/app/test/mock/service

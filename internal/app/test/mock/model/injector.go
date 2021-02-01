@@ -1,7 +1,8 @@
 package mock
 
 import (
-	"GOMA/internal/app/model"
+	"app_module__/internal/app/model"
+
 	"github.com/google/wire"
 )
 
@@ -9,5 +10,5 @@ import (
 var ModelInjectorSet = wire.NewSet(wire.Struct(new(ModelInjector), "*"))
 
 type ModelInjector struct {
-	OrderModel model.IOrder
+	MessageTypeName__Model model.IMessageTypeName__
 }

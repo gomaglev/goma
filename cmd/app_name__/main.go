@@ -4,8 +4,8 @@ import (
 	"context"
 	"os"
 
-	"GOMA/internal/app"
-	"GOMA/pkg/logger"
+	"app_module__/internal/app"
+	"app_module__/pkg/logger"
 
 	"github.com/urfave/cli/v2"
 )
@@ -16,9 +16,9 @@ var VERSION = "0.0.1"
 func main() {
 	app := cli.NewApp()
 
-	app.Name = "{{.AppName}}"
+	app.Name = "AppNameTitleCase__"
 	app.Version = VERSION
-	app.Usage = "gRPC service scaffolding with a {{.AppName}} sample"
+	app.Usage = "AppNameTitleCase__ gRPC microservice"
 
 	logger.SetVersion(VERSION)
 	ctx := logger.NewTraceIDContext(context.Background(), "main")
@@ -34,7 +34,7 @@ func main() {
 func newServiceCmd(ctx context.Context) *cli.Command {
 	return &cli.Command{
 		Name:  "start",
-		Usage: "{{.LowerCaseAppName}} start",
+		Usage: "app_name__ start",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:     "conf",

@@ -4,6 +4,8 @@ Chibi Goma Project Template for [protomicro](https://github.com/gomaglev/protomi
 
 ## Variables
 
+### Using variables end with `__` to make the template runnable itself before generation.
+
 ### proto file
 
 ``` Javascript
